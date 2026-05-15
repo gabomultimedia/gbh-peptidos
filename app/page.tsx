@@ -66,11 +66,17 @@ export default function HomePage() {
       <Navbar />
       <main>
         {/* Hero with background image */}
-        <section
-          className="relative py-32 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
-        >
-          {/* White overlay 70% */}
+        <section className="relative py-32">
+          <Image
+            src="/images/hero-bg.webp"
+            alt="GBH México - Péptidos de Grado Médico"
+            fill
+            priority
+            fetchPriority="high"
+            className="object-cover"
+            sizes="100vw"
+            quality={75}
+          />
           <div className="absolute inset-0 bg-white/70" />
           <div className="relative container-main">
             <div className="max-w-3xl">
@@ -146,8 +152,9 @@ export default function HomePage() {
                     <Image
                       src={product.image}
                       alt={product.name}
-                      width={200}
-                      height={200}
+                      width={228}
+                      height={228}
+                      quality={75}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
@@ -280,6 +287,12 @@ export default function HomePage() {
                 },
               ].map((cat, i) => {
                 const IconComponent = cat.icon;
+                const imgWidth = cat.title === "Control de Peso y Metabolismo" ? 276 :
+                                 cat.title === "Optimización Hormona de Crecimiento" ? 276 :
+                                 cat.title === "Regeneración y Skin Health" ? 276 : 276;
+                const imgHeight = cat.title === "Control de Peso y Metabolismo" ? 414 :
+                                  cat.title === "Optimización Hormona de Crecimiento" ? 414 :
+                                  cat.title === "Regeneración y Skin Health" ? 276 : 276;
                 return (
                 <div
                   key={i}
@@ -291,6 +304,8 @@ export default function HomePage() {
                       src={cat.image}
                       alt={cat.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                      quality={75}
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F3C]/60 to-transparent" />
