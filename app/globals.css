@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #F9FAFB;
+    color: #151c27;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .gold-gradient-bg {
+    background: linear-gradient(135deg, #d4af37 0%, #F5E17A 100%);
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #d4af37 0%, #F5E17A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-shadow {
+    box-shadow: 0 4px 20px -4px rgba(212, 175, 55, 0.08);
+  }
+
+  .gold-shadow-deep {
+    box-shadow: 0 12px 40px -8px rgba(26, 31, 60, 0.04), 0 4px 20px -4px rgba(212, 175, 55, 0.08);
+  }
+
+  .champagne-gradient {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #FFFBF0 100%);
+  }
+
+  .container-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  @media (max-width: 1024px) {
+    .container-main {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .container-main {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-spin-slow {
+  animation: spin 60s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}

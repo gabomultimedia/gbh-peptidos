@@ -1,0 +1,289 @@
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Search, MapPin, Star, Phone, ExternalLink, ChevronRight } from "lucide-react";
+
+const clinics = [
+  {
+    id: "vive-medical-spa",
+    name: "Vive Medical Spa Tijuana",
+    specialty: "Medicina Estética y Regenerativa",
+    location: "Zona Río, Tijuana, B.C.",
+    featured: true,
+    badge: "Clínica Destacada",
+    description:
+      "Una clínica de vanguardia dedicada a la salud integral, utilizando las técnicas más innovadoras y productos certificados de GBH para garantizar la seguridad y satisfacción de cada paciente.",
+    services: [
+      "Medicina estética regenerativa",
+      "Programas de optimización hormonal",
+      "Tratamientos de rejuvenecimiento",
+      "Wellness integral",
+    ],
+    tags: ["Optimización Metabólica", "Terapia Peptídica IV", "Skin Health"],
+    phone: "+52 (664) 123 4567",
+    website: "https://vivemedicalspa.com",
+  },
+  {
+    id: "aurelian-clinic",
+    name: "Aurelian Clinic CDMX",
+    specialty: "Medicina Antiaging y Longevidad",
+    location: "Polanco, Ciudad de México",
+    featured: false,
+    badge: null,
+    description:
+      "Centro especializado en medicina de longevidad y protocolos de optimización hormonal. Equipo multidisciplinario con certificación en terapia peptídica.",
+    services: [
+      "Evaluación de biomarkers",
+      "Protocolos de optimización hormonal",
+      "Terapia peptídica personalizada",
+      "Nutrición clínica",
+    ],
+    tags: ["Antiaging", "Longevidad", "Medicina Funcional"],
+    phone: "+52 (55) 4567 8901",
+    website: "#",
+  },
+  {
+    id: "regen-center",
+    name: "Regen Center Monterrey",
+    specialty: "Regeneración Tisular y Medicina Orthomolecular",
+    location: "San Pedro Garza García, Nuevo León",
+    featured: false,
+    badge: null,
+    description:
+      "Centro de investigación y tratamiento en medicina regenerativa. Especializados en aplicaciones de péptidos para recuperación deportiva y antiaging.",
+    services: [
+      "Regeneración tisular",
+      "Medicina ortomolecular",
+      "Recuperación deportiva",
+      "Terapias IV",
+    ],
+    tags: ["Regeneración", "Deportología", "IV Therapy"],
+    phone: "+52 (81) 7890 1234",
+    website: "#",
+  },
+  {
+    id: "biotech-wellness",
+    name: "Biotech Wellness Guadalajara",
+    specialty: "Biotecnología Aplicada al Bienestar",
+    location: "Zapopan, Jalisco",
+    featured: false,
+    badge: null,
+    description:
+      "Clínica de última generación enfocada en la aplicación de biotecnología para el bienestar integral. Protocols personalizados de medicina estética y antiaging.",
+    services: [
+      "Biotecnología wellness",
+      "Análisis genético",
+      "Protocolos antiaging",
+      "Medicina estética avanzada",
+    ],
+    tags: ["Biotecnología", "Genética", "Wellness"],
+    phone: "+52 (33) 3456 7890",
+    website: "#",
+  },
+];
+
+export default function ClinicsPage() {
+  return (
+    <>
+      <Navbar />
+      <main className="pt-20">
+        {/* Hero */}
+        <section className="bg-white py-24">
+          <div className="container-main">
+            <div className="text-center space-y-4 mb-16">
+              <span className="gold-gradient-text text-sm font-semibold uppercase tracking-widest">
+                Red de Clínicas
+              </span>
+              <h1 className="text-4xl md:text-5xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                Clínicas Certificadas GBH
+              </h1>
+              <p className="text-lg text-[#585c7d] max-w-2xl mx-auto">
+                Encuentre clínicas autorizadas donde realizar sus tratamientos con seguridad y estándares profesionales. Todos los centros certificados utilizan productos GBH de grado médico.
+              </p>
+            </div>
+
+            {/* Search */}
+            <div className="max-w-xl mx-auto mb-16">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#585c7d]" />
+                <input
+                  type="text"
+                  placeholder="Buscar clínica o especialidad..."
+                  className="w-full pl-12 pr-4 py-4 rounded-[16px] border border-[#d4af37]/30 bg-white gold-shadow text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                />
+              </div>
+            </div>
+
+            {/* Filter Pills */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {["Todas", "Medicina Estética", "Optimización Hormonal", "Wellness", "Antiaging", "Regeneración"].map(
+                (filter, i) => (
+                  <button
+                    key={i}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                      i === 0
+                        ? "gold-gradient-bg text-white"
+                        : "border border-[#d4af37]/30 text-[#1A1F3C] hover:border-[#d4af37] hover:bg-[#f9f9ff]"
+                    }`}
+                  >
+                    {filter}
+                  </button>
+                )
+              )}
+            </div>
+
+            {/* Clinics Grid */}
+            <div className="space-y-8">
+              {/* Featured Clinic */}
+              {clinics
+                .filter((c) => c.featured)
+                .map((clinic) => (
+                  <div
+                    key={clinic.id}
+                    className="bg-white rounded-[24px] gold-shadow-deep border border-[#d4af37]/30 overflow-hidden"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                      {/* Image area */}
+                      <div className="lg:col-span-1 bg-[#f9f9ff] flex items-center justify-center p-12 min-h-[300px] border-r border-[#d4af37]/10">
+                        <div className="text-center space-y-4">
+                          <div className="w-24 h-24 rounded-full bg-[#d4af37]/10 flex items-center justify-center mx-auto">
+                            <svg width="48" height="48" fill="none" stroke="#d4af37" strokeWidth="1.5" viewBox="0 0 24 24">
+                              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                          </div>
+                          {clinic.badge && (
+                            <span className="inline-flex items-center gap-1 bg-[#d4af37] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                              <Star className="w-3 h-3" />
+                              {clinic.badge}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="lg:col-span-2 p-8 space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-bold text-[#1A1F3C] mb-1" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                            {clinic.name}
+                          </h3>
+                          <p className="text-[#d4af37] font-medium">{clinic.specialty}</p>
+                        </div>
+
+                        <p className="text-[#585c7d] leading-relaxed">{clinic.description}</p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {clinic.tags.map((tag, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1 rounded-full border border-[#585c7d]/20 text-xs text-[#585c7d] bg-[#f9f9ff]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-[#d4af37]/10">
+                          <div className="flex items-center gap-2 text-sm text-[#585c7d]">
+                            <MapPin className="w-4 h-4 text-[#d4af37]" />
+                            {clinic.location}
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-[#585c7d]">
+                            <Phone className="w-4 h-4 text-[#d4af37]" />
+                            {clinic.phone}
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <a
+                            href={clinic.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="gold-gradient-bg text-white font-semibold px-6 py-3 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
+                          >
+                            Visitar Sitio
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                          <button className="border border-[#d4af37] text-[#1A1F3C] font-semibold px-6 py-3 rounded-[16px] hover:bg-[#f9f9ff] transition-all inline-flex items-center gap-2">
+                            Solicitar Cita
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+              {/* Standard Clinics */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {clinics
+                  .filter((c) => !c.featured)
+                  .map((clinic) => (
+                    <div
+                      key={clinic.id}
+                      className="bg-white rounded-[16px] p-8 gold-shadow border border-[#d4af37]/20 hover:-translate-y-1 transition-transform duration-300"
+                    >
+                      <h3 className="text-lg font-bold text-[#1A1F3C] mb-1" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                        {clinic.name}
+                      </h3>
+                      <p className="text-[#d4af37] text-sm font-medium mb-3">{clinic.specialty}</p>
+
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {clinic.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-0.5 rounded-full border border-[#585c7d]/20 text-xs text-[#585c7d] bg-[#f9f9ff]"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="space-y-2 mb-6 text-sm text-[#585c7d]">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-[#d4af37]" />
+                          {clinic.location}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Phone className="w-3 h-3 text-[#d4af37]" />
+                          {clinic.phone}
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <button className="flex-1 gold-gradient-bg text-white text-sm font-medium py-2 rounded-[12px] hover:opacity-90 transition-all">
+                          Visitar
+                        </button>
+                        <button className="flex-1 border border-[#d4af37]/30 text-[#1A1F3C] text-sm font-medium py-2 rounded-[12px] hover:bg-[#f9f9ff] transition-all">
+                          Contactar
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gold Banner */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 gold-gradient-bg opacity-10" />
+          <div className="container-main relative z-10 text-center">
+            <h2 className="text-2xl font-bold text-[#1A1F3C] mb-4" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              Estándar Oro GBH
+            </h2>
+            <p className="text-[#585c7d] max-w-xl mx-auto mb-6">
+              Todas las clínicas certificadas cumplen con nuestros estándares de calidad, seguridad y protocolos de aplicación. Encuentre el centro más cercano a usted.
+            </p>
+            <Link
+              href="/contact"
+              className="gold-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
+            >
+              Registrar su Clínica
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
