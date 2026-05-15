@@ -75,7 +75,7 @@ export default function HomePage() {
             fetchPriority="high"
             className="object-cover"
             sizes="100vw"
-            quality={75}
+            quality={60}
           />
           <div className="absolute inset-0 bg-white/70" />
           <div className="relative container-main">
