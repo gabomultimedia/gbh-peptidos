@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Términos y Condiciones | GBH México",
-  description: "Términos y condiciones de uso del sitio web GBH México.",
+  title: "Términos y Condiciones | Q Peptides",
+  description: "Términos y condiciones de Q Pepings — laboratorio con sede en Singapur.",
 };
 
 export default function TermsPage() {
@@ -20,22 +20,22 @@ export default function TermsPage() {
               <p className="text-sm text-[#d4af37]">Última actualización: Mayo 2026</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Objeto</h2>
-              <p>GBH México proporciona información sobre productos biotecnológicos de grado médico exclusivamente a profesionales de la salud debidamente acreditados en México.</p>
+              <p>Q Peptides proporciona información sobre productos biotecnológicos de grado médico exclusivamente a profesionales de la salud debidamente acreditados.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Venta Exclusiva a Profesionales</h2>
-              <p>Los productos GBH están destinados exclusivamente a médicos, clínicas y profesionales de la salud con cédula profesional vigente. No se atiende al público general.</p>
+              <p>Los productos Q Peptides están destinados exclusivamente a médicos, clínicas y profesionales de la salud con cédula profesional vigente.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Verificación de Credentials</h2>
-              <p>El equipo de GBH verificará la validez de la cédula profesional antes de procesar cualquier solicitud de compra o cotización.</p>
+              <p>El equipo de Q Peptides verificará la validez de la cédula profesional antes de procesar cualquier solicitud.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Información de Producto</h2>
-              <p>La información proporcionada en este sitio es de carácter técnico y científico. GBH no garantiza resultados específicos y recomienda la consulta con un profesional de la salud.</p>
+              <p>La información proporcionada en este sitio es de carácter técnico y científico. Q Peptides no garantiza resultados específicos.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Propiedad Intelectual</h2>
-              <p>Todo el contenido de este sitio, incluyendo textos, imágenes y logotipos, es propiedad de GBH Global Beauty & Health y está protegido por las leyes de propiedad intelectual mexicanas.</p>
+              <p>Todo el contenido de este sitio es propiedad de Q Peptides y está protegido por las leyes de propiedad intelectual.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Limitación de Responsabilidad</h2>
-              <p>GBH México no será responsable por daños derivados del uso incorrecto de sus productos. El usuario es responsable de verificar la compatibilidad y legalidad de uso en su jurisdicción.</p>
+              <p>Q Peptides no será responsable por daños derivados del uso incorrecto de sus productos.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Contacto</h2>
               <p>Para consultas sobre estos términos: <span className="text-[#d4af37]">info@q-peptides.com</span></p>

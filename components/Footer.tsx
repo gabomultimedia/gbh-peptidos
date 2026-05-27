@@ -21,7 +21,7 @@ export default function Footer() {
     <>
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/5215512345678?text=Hola%2C%20me%20interesa%20obtener%20información%20sobre%20los%20péptidos%20de%20GBH%20México"
+        href="https://wa.me/65269542519?text=Hola%2C%20me%20interesa%20obtener%20información%20sobre%20los%20péptidos%20de%20Q%20Peptides%20desde%20Singapur"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
@@ -40,14 +40,14 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Image
                   src="/images/logo.png"
-                  alt="GBH México"
+                  alt="Q Peptides"
                   width={160}
                   height={54}
                   className="h-14 w-auto brightness-0 invert"
                 />
               </div>
               <p className="text-sm opacity-80 max-w-xs">
-                Distribuidores de Grado Farmacéutico. Proveedores de confianza para la medicina estética y regenerativa.
+                Sede en Singapur · Biotecnología de Alta Pureza con estándares internacionales.
               </p>
             </div>
 
@@ -92,10 +92,23 @@ export default function Footer() {
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +52 (55) 1234 5678
+                +65 6954 2519
+              </p>
+              <p className="text-sm opacity-80 flex items-center gap-2">
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Fax: +65 6491 5938
+              </p>
+              <p className="text-sm opacity-80 flex items-center gap-2">
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                2 International Business Park Road Strategy #01-04, Singapore 609930
               </p>
               <a
-                href="https://wa.me/5215512345678"
+                href="https://wa.me/65269542519"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-[#25D366] hover:text-[#128C7E] transition-colors mt-2"
@@ -125,7 +138,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="border-t border-white/10 mt-4 pt-4 text-center text-xs opacity-60">
-            © 2026 GBH Global Beauty & Health. Todos los derechos reservados.
+            © 2026 Q Peptides. Todos los derechos reservados.
           </div>
         </div>
       </footer>

@@ -12,7 +12,7 @@ const clinics = [
     featured: true,
     badge: "Clínica Destacada",
     description:
-      "Una clínica de vanguardia dedicada a la salud integral, utilizando las técnicas más innovadoras y productos certificados de GBH para garantizar la seguridad y satisfacción de cada paciente.",
+      "Una clínica de vanguardia dedicada a la salud integral, utilizando las técnicas más innovadoras y productos certificados de Q Peptides para garantizar la seguridad y satisfacción de cada paciente.",
     services: [
       "Medicina estética regenerativa",
       "Programas de optimización hormonal",
@@ -95,10 +95,10 @@ export default function ClinicsPage() {
                 Red de Clínicas
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                Clínicas Certificadas GBH
+                Clínicas Certificadas Q Peptides
               </h1>
               <p className="text-lg text-[#585c7d] max-w-2xl mx-auto">
-                Encuentre clínicas autorizadas donde realizar sus tratamientos con seguridad y estándares profesionales. Todos los centros certificados utilizan productos GBH de grado médico.
+                Encuentre clínicas autorizadas donde realizar sus tratamientos con seguridad y estándares profesionales. Todos los centros certificados utilizan productos Q Peptides de grado médico.
               </p>
             </div>
 
@@ -268,7 +268,7 @@ export default function ClinicsPage() {
           <div className="absolute inset-0 gold-gradient-bg opacity-10" />
           <div className="container-main relative z-10 text-center">
             <h2 className="text-2xl font-bold text-[#1A1F3C] mb-4" style={{ fontFamily: "DM Sans, sans-serif" }}>
-              Estándar Oro GBH
+              Estándar Oro Q Peptides
             </h2>
             <p className="text-[#585c7d] max-w-xl mx-auto mb-6">
               Todas las clínicas certificadas cumplen con nuestros estándares de calidad, seguridad y protocolos de aplicación. Encuentre el centro más cercano a usted.

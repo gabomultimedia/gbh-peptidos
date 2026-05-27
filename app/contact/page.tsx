@@ -220,7 +220,7 @@ export default function ContactPage() {
                     <div className="flex items-start gap-3">
                       <ShieldCheck className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
                       <p className="text-xs text-[#585c7d] leading-relaxed">
-                        Al enviar este formulario, usted declara ser profesional de la salud con cédula profesional vigente. GBH se reserva el derecho de verificar la autenticidad de la información proporcionada.
+                        Al enviar este formulario, usted declara ser profesional de la salud con cédula profesional vigente. Q Peptides se reserva el derecho de verificar la autenticidad de la información proporcionada.
                       </p>
                     </div>
                   </div>

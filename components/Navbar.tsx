@@ -64,7 +64,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
-            alt="GBH México"
+            alt="Q Peptides"
             width={140}
             height={47}
             className="h-12 w-auto"

@@ -50,7 +50,7 @@ export default function CatalogPage() {
           <div className="container-main">
             <div className="text-center space-y-4 mb-16">
               <span className="gold-gradient-text text-sm font-semibold uppercase tracking-widest">
-                GBH México
+                Q Peptides
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
                 Catálogo de Péptidos de Grado Médico
@@ -167,7 +167,7 @@ export default function CatalogPage() {
                   Aviso Importante: Venta Exclusiva a Profesionales
                 </h3>
                 <p className="text-sm text-[#585c7d]">
-                  La distribución de los compuestos ofrecidos por GBH México está estrictamente reservada para médicos, clínicas y profesionales de la salud debidamente acreditados con cédula profesional vigente.
+                  La distribución de los compuestos ofrecidos por Q Peptides está estrictamente reservada para médicos, clínicas y profesionales de la salud debidamente acreditados con cédula profesional vigente.
                 </p>
               </div>
             </div>

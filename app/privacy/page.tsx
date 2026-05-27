@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Aviso de Privacidad | GBH México",
-  description: "Aviso de privacidad de GBH México. Información sobre cómo protegemos sus datos personales.",
+  title: "Aviso de Privacidad | Q Peptides",
+  description: "Aviso de privacidad de Q Peptides — laboratorio con sede en Singapur.",
 };
 
 export default function PrivacyPage() {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
               <p className="text-sm text-[#d4af37]">Última actualización: Mayo 2026</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Responsable del Tratamiento de Datos</h2>
-              <p>GBH Global Beauty & Health, con domicilio en México, es responsable del tratamiento de sus datos personales conforme a este aviso de privacidad.</p>
+              <p>Q Peptides, con sede en Singapur (2 International Business Park Road Strategy #01-04), es responsable del tratamiento de sus datos personales.</p>
 
               <h2 className="text-xl font-semibold text-[#1A1F3C]">Datos Personales Recopilados</h2>
               <p>Podemos recopilar: nombre, correo electrónico, número de teléfono, cédula profesional, especialidad médica e información de contacto de su institución.</p>

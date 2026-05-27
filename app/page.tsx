@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, CheckCircle, Shield, Award, Star, Scale, Zap, Sparkles, Heart } from "lucide-react";
+import { ChevronRight, CheckCircle, Shield, Award, Star, Scale, Zap, Sparkles, Heart, Globe } from "lucide-react";
 
 const stats = [
   { value: "99%+", label: "Pureza Certificada" },
@@ -58,6 +58,11 @@ const whyGBH = [
     title: "Distribución Exclusiva",
     desc: "Venta solo a profesionales de salud con cédula vigente.",
   },
+  {
+    icon: Globe,
+    title: "Sede en Singapur",
+    desc: "Hub biotecnológico de Asia con estándares internacionales.",
+  },
 ];
 
 export default function HomePage() {
@@ -69,7 +74,7 @@ export default function HomePage() {
         <section className="relative py-32">
           <Image
             src="/images/hero-bg.webp"
-            alt="GBH México - Péptidos de Grado Médico"
+            alt="Q Peptides — Péptidos de Grado Médico 🇸🇬"
             fill
             priority
             fetchPriority="high"
@@ -82,11 +87,11 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center rounded-full border border-[#d4af37]/30 bg-white/80 backdrop-blur-sm px-4 py-1.5 gold-shadow mb-6 animate-fade-in">
                 <span className="gold-gradient-text text-xs font-semibold uppercase tracking-wider">
-                  GBH Global Beauty & Health
+                  Q Peptides · Laboratorio con sede en Singapur 🇸🇬
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-[#1A1F3C] leading-tight mb-6 animate-fade-in-up" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                GBH México: Distribuidora Líder en Péptidos de Grado Médico
+                Q Peptides — Péptidos de Grado Médico de Alta Pureza
               </h1>
               <p className="text-xl text-[#585c7d] mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
                 Innovación en medicina estética regenerativa y optimización metabólica. Compuestos científicos de la más alta pureza certificados para la práctica médica profesional.
@@ -134,7 +139,7 @@ export default function HomePage() {
                 Compuestos Destacados
               </span>
               <h2 className="text-3xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                Productos GBH
+                Productos Q Peptides
               </h2>
               <p className="text-[#585c7d] max-w-xl mx-auto">
                 Péptidos de alta pureza para la práctica médica profesional.
@@ -185,7 +190,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why GBH */}
+        {/* Why Q Peptides */}
         <section className="bg-[#f9f9ff] py-24">
           <div className="container-main">
             <div className="text-center mb-16 space-y-4 animate-fade-in-up">
@@ -193,7 +198,7 @@ export default function HomePage() {
                 Nuestra Propuesta
               </span>
               <h2 className="text-3xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                ¿Por qué elegir GBH?
+                ¿Por qué elegir Q Peptides?
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,7 +238,7 @@ export default function HomePage() {
                   Aviso Importante: Venta Exclusiva a Profesionales
                 </h3>
                 <p className="text-sm text-[#585c7d]">
-                  La distribución de los compuestos y péptidos ofrecidos por GBH México está estrictamente reservada para médicos, clínicas y profesionales de la salud debidamente acreditados con cédula profesional vigente.
+                  La distribución de los compuestos y péptidos ofrecidos por Q Peptides está estrictamente reservada para médicos, clínicas y profesionales de la salud debidamente acreditados con cédula profesional vigente.
                 </p>
               </div>
             </div>
