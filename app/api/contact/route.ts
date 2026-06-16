@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+export const runtime = "nodejs";
+
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 const fromEmail = process.env.RESEND_FROM_EMAIL || "Q-PEPTIDES <no-reply@q-peptides.com>";
@@ -101,10 +103,7 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      const message =
-        error.message?.includes("only send testing emails")
-          ? "Resend sandbox solo permite enviar a info@q-peptides.com. Para enviar también a Kommo, verifica un dominio en Resend y define RESEND_FROM_EMAIL con ese correo verificado."
-          : "No se pudo enviar el correo. Intenta de nuevo.";
+      const message = error.message || "No se pudo enviar el correo. Intenta de nuevo.";
       return NextResponse.json(
         { error: message },
         { status: error.message?.includes("only send testing emails") ? 403 : 502 }
@@ -112,10 +111,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json(
-      { error: "No se pudo enviar el correo. Intenta de nuevo." },
-      { status: 502 }
-    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "No se pudo enviar el correo. Intenta de nuevo.";
+    return NextResponse.json({ error: message }, { status: 502 });
   }
 }
