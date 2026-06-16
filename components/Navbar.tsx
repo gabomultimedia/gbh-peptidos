@@ -5,30 +5,31 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import { getProductImagePath } from "@/lib/product-images";
 
 const categories = [
   {
     title: "Control de Peso",
     href: "/catalog/weight-loss",
-    image: "/images/product-semaglutide.webp",
+    image: getProductImagePath("semaglutide"),
     products: ["Semaglutida", "Tirzepatida", "Retatrutida"],
   },
   {
     title: "Optimización GH",
     href: "/catalog/gh-optimization",
-    image: "/images/product-tesamorelin.webp",
+    image: getProductImagePath("tesamorelin"),
     products: ["Tesamorelina", "Ipamorelina + CJC-1295"],
   },
   {
     title: "Regeneración",
     href: "/catalog/regeneration",
-    image: "/images/product-ghk-cu.webp",
+    image: getProductImagePath("ghk-cu"),
     products: ["GHK-Cu", "Melanotano-2"],
   },
   {
     title: "Bienestar",
     href: "/catalog",
-    image: "/images/product-melanotan.webp",
+    image: getProductImagePath("melanotan-2"),
     products: ["PT-141", "Kisspeptin-10"],
   },
 ];
@@ -58,16 +59,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white border-b border-[#d4af37] shadow-[0_4px_20px_-4px_rgba(212,175,55,0.08)]">
+    <nav className="fixed top-0 w-full z-50 bg-white border-b border-[#00BFFF] shadow-[0_4px_20px_-4px_rgba(0,51,102,0.08)]">
       <div className="container-main flex justify-between items-center h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/logo.png"
-            alt="Q Peptides"
-            width={140}
-            height={47}
-            className="h-12 w-auto"
+            src="/logo-peptidos-cropped.png"
+            alt="Q-PEPTIDES"
+            width={190}
+            height={64}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>
@@ -78,9 +79,10 @@ export default function Navbar() {
             <div key={link.href} className="relative">
               {link.label === "Productos" ? (
                 <button
+                  type="button"
                   onMouseEnter={handleMouseEnter}
-                  className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#d4af37] px-4 py-2 rounded-[12px] ${
-                    pathname.startsWith("/catalog") ? "text-[#d4af37]" : "text-[#1A1F3C]"
+                  className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-[#00BFFF] px-4 py-2 rounded-[12px] ${
+                    pathname.startsWith("/catalog") ? "text-[#00BFFF]" : "text-[#003366]"
                   }`}
                 >
                   {link.label}
@@ -89,8 +91,8 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className={`text-sm font-semibold transition-colors hover:text-[#d4af37] px-4 py-2 rounded-[12px] ${
-                    pathname === link.href ? "text-[#d4af37]" : "text-[#1A1F3C]"
+                  className={`text-sm font-semibold transition-colors hover:text-[#00BFFF] px-4 py-2 rounded-[12px] ${
+                    pathname === link.href ? "text-[#00BFFF]" : "text-[#003366]"
                   }`}
                 >
                   {link.label}
@@ -101,7 +103,7 @@ export default function Navbar() {
               {link.label === "Productos" && productsOpen && (
                 <div
                   ref={menuRef}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-[20px] gold-shadow-deep border border-[#d4af37]/20 p-6 animate-fade-in-up"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-[20px] brand-shadow-deep border border-[#00BFFF]/20 p-6 animate-fade-in-up"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -113,7 +115,7 @@ export default function Navbar() {
                         className="group"
                         onClick={() => setProductsOpen(false)}
                       >
-                        <div className="aspect-square bg-[#f9f9ff] rounded-[12px] overflow-hidden mb-3">
+                        <div className="aspect-square bg-[#F3F8FD] rounded-[12px] overflow-hidden mb-3">
                           <Image
                             src={cat.image}
                             alt={cat.title}
@@ -122,16 +124,16 @@ export default function Navbar() {
                             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
-                        <h4 className="font-semibold text-[#1A1F3C] text-sm text-center group-hover:text-[#d4af37] transition-colors">
+                        <h4 className="font-semibold text-[#003366] text-sm text-center group-hover:text-[#00BFFF] transition-colors">
                           {cat.title}
                         </h4>
                       </Link>
                     ))}
                   </div>
-                  <div className="mt-4 pt-4 border-t border-[#d4af37]/20">
+                  <div className="mt-4 pt-4 border-t border-[#00BFFF]/20">
                     <Link
                       href="/catalog"
-                      className="flex items-center justify-center gap-2 text-sm font-semibold text-[#d4af37] hover:text-[#F5E17A] transition-colors py-2"
+                      className="flex items-center justify-center gap-2 text-sm font-semibold text-[#00BFFF] hover:text-[#7CE9FF] transition-colors py-2"
                       onClick={() => setProductsOpen(false)}
                     >
                       Ver todo el catálogo
@@ -147,7 +149,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="gold-gradient-bg text-white text-sm font-semibold px-6 py-2.5 rounded-[12px] hover:opacity-90 transition-all shadow-sm hover:scale-105 transition-transform"
+            className="brand-gradient-bg text-white text-sm font-semibold px-6 py-2.5 rounded-[12px] hover:opacity-90 transition-all shadow-sm hover:scale-105 transition-transform"
           >
             Registro para Médicos
           </Link>
@@ -155,7 +157,8 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-[#1A1F3C] p-2"
+          type="button"
+          className="md:hidden text-[#003366] p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -171,15 +174,16 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-[#d4af37]">
+        <div className="md:hidden bg-white border-t border-[#00BFFF]">
           <div className="container-main py-4 space-y-2">
             {navLinks.map((link) => (
               <div key={link.href}>
                 {link.label === "Productos" ? (
                   <>
                     <button
+                      type="button"
                       onClick={() => setProductsOpen(!productsOpen)}
-                      className="w-full flex items-center justify-between text-[#1A1F3C] font-semibold py-3 border-b border-[#d4af37]/10"
+                      className="w-full flex items-center justify-between text-[#003366] font-semibold py-3 border-b border-[#00BFFF]/10"
                     >
                       {link.label}
                       <ChevronDown className={`w-5 h-5 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
@@ -190,7 +194,7 @@ export default function Navbar() {
                           <Link
                             key={cat.title}
                             href={cat.href}
-                            className="flex flex-col items-center py-3 px-2 rounded-[12px] bg-[#f9f9ff] hover:bg-[#d4af37]/10 transition-colors"
+                            className="flex flex-col items-center py-3 px-2 rounded-[12px] bg-[#F3F8FD] hover:bg-[#00BFFF]/10 transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
                             <div className="w-20 h-20 rounded-[10px] overflow-hidden mb-2 bg-white">
@@ -202,7 +206,7 @@ export default function Navbar() {
                                 className="w-full h-full object-contain"
                               />
                             </div>
-                            <span className="text-xs font-semibold text-[#1A1F3C] text-center">{cat.title}</span>
+                            <span className="text-xs font-semibold text-[#003366] text-center">{cat.title}</span>
                           </Link>
                         ))}
                       </div>
@@ -211,7 +215,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="block text-[#1A1F3C] font-semibold py-3 border-b border-[#d4af37]/10"
+                    className="block text-[#003366] font-semibold py-3 border-b border-[#00BFFF]/10"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
@@ -222,7 +226,7 @@ export default function Navbar() {
             <div className="pt-4">
               <Link
                 href="/contact"
-                className="block gold-gradient-bg text-white text-center font-semibold px-6 py-3.5 rounded-[12px]"
+                className="block brand-gradient-bg text-white text-center font-semibold px-6 py-3.5 rounded-[12px]"
                 onClick={() => setMobileOpen(false)}
               >
                 Registro para Médicos

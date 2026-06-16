@@ -46,13 +46,13 @@ export default function ContactPage() {
         <section className="bg-white py-20">
           <div className="container-main">
             <div className="max-w-2xl mx-auto text-center space-y-4 mb-16">
-              <span className="gold-gradient-text text-sm font-semibold uppercase tracking-widest">
+              <span className="brand-gradient-text text-sm font-semibold uppercase tracking-widest">
                 Registro Profesional
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <h1 className="text-4xl md:text-5xl font-bold text-[#003366]" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Registro para Médicos
               </h1>
-              <p className="text-lg text-[#585c7d]">
+              <p className="text-lg text-[#4A657A]">
                 El acceso a nuestros productos está restringido a profesionales de la salud. Complete el formulario para verificar su licencia profesional.
               </p>
             </div>
@@ -60,19 +60,19 @@ export default function ContactPage() {
             {/* Success State */}
             {submitted ? (
               <div className="max-w-xl mx-auto">
-                <div className="bg-white rounded-[24px] gold-shadow-deep border border-[#d4af37]/20 p-12 text-center space-y-6">
-                  <div className="w-20 h-20 rounded-full gold-gradient-bg flex items-center justify-center mx-auto">
+                <div className="bg-white rounded-[24px] brand-shadow-deep border border-[#00BFFF]/20 p-12 text-center space-y-6">
+                  <div className="w-20 h-20 rounded-full brand-gradient-bg flex items-center justify-center mx-auto">
                     <CheckCircle className="w-10 h-10 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                    <h2 className="text-2xl font-bold text-[#003366]" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       Solicitud Recibida
                     </h2>
-                    <p className="text-[#585c7d] mt-2">
+                    <p className="text-[#4A657A] mt-2">
                       Su solicitud ha sido recibida. Nuestro equipo se pondrá en contacto con usted en un plazo de 24-48 horas hábiles para completar el proceso de verificación.
                     </p>
                   </div>
-                  <div className="flex items-center justify-center gap-2 text-sm text-[#d4af37]">
+                  <div className="flex items-center justify-center gap-2 text-sm text-[#00BFFF]">
                     <ShieldCheck className="w-4 h-4" />
                     Información protegida bajo nuestros protocolos de privacidad
                   </div>
@@ -90,17 +90,17 @@ export default function ContactPage() {
                         <div
                           className={`w-10 h-10 rounded-full flex items-center justify-center ${
                             isActive
-                              ? "gold-gradient-bg text-white"
-                              : "bg-[#f9f9ff] border border-[#d4af37]/30 text-[#585c7d]"
+                              ? "brand-gradient-bg text-white"
+                              : "bg-[#F3F8FD] border border-[#00BFFF]/30 text-[#4A657A]"
                           }`}
                         >
                           <Icon className="w-5 h-5" />
                         </div>
-                        <span className={`text-sm font-medium ${isActive ? "text-[#1A1F3C]" : "text-[#585c7d]"}`}>
+                        <span className={`text-sm font-medium ${isActive ? "text-[#003366]" : "text-[#4A657A]"}`}>
                           {step.label}
                         </span>
                         {i < steps.length - 1 && (
-                          <div className="w-16 h-px bg-[#d4af37]/30 ml-4" />
+                          <div className="w-16 h-px bg-[#00BFFF]/30 ml-4" />
                         )}
                       </div>
                     );
@@ -110,74 +110,74 @@ export default function ContactPage() {
                 {/* Form */}
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-white rounded-[24px] gold-shadow-deep border border-[#d4af37]/20 p-8 space-y-6"
+                  className="bg-white rounded-[24px] brand-shadow-deep border border-[#00BFFF]/20 p-8 space-y-6"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
-                        Nombre Completo <span className="text-[#d4af37]">*</span>
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                        Nombre Completo <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                         placeholder="Dr. Juan Pérez García"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
-                        Correo Electrónico Profesional <span className="text-[#d4af37]">*</span>
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                        Correo Electrónico Profesional <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                         placeholder="juan.perez@clinica.com"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
-                        Teléfono de Contacto <span className="text-[#d4af37]">*</span>
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                        Teléfono de Contacto <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
                         type="tel"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                         placeholder="+52 (55) 1234 5678"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
-                        Cédula Profesional <span className="text-[#d4af37]">*</span>
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                        Cédula Profesional <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.license}
                         onChange={(e) => setFormData({ ...formData, license: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                         placeholder="12345678"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
-                        Especialidad Médica <span className="text-[#d4af37]">*</span>
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                        Especialidad Médica <span className="text-[#00BFFF]">*</span>
                       </label>
                       <select
                         required
                         value={formData.specialty}
                         onChange={(e) => setFormData({ ...formData, specialty: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                       >
                         <option value="">Seleccionar especialidad</option>
                         {specialties.map((s) => (
@@ -189,45 +189,45 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
+                      <label className="block text-sm font-semibold text-[#003366] mb-2">
                         Nombre de Clínica o Institución
                       </label>
                       <input
                         type="text"
                         value={formData.institution}
                         onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-                        className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                        className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                         placeholder="Clínica Esperanza"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-[#1A1F3C] mb-2">
+                    <label className="block text-sm font-semibold text-[#003366] mb-2">
                       Comentarios o Consultas
                     </label>
                     <textarea
                       rows={4}
                       value={formData.comments}
                       onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
-                      className="w-full px-4 py-3 rounded-[16px] border border-[#d4af37]/30 bg-white text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 resize-none"
+                      className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20 resize-none"
                       placeholder="Describa brevemente su consulta o el tipo de productos que le interesan..."
                     />
                   </div>
 
                   {/* Legal Notice */}
-                  <div className="bg-[#f9f9ff] rounded-[16px] p-6 border border-[#d4af37]/10">
+                  <div className="bg-[#F3F8FD] rounded-[16px] p-6 border border-[#00BFFF]/10">
                     <div className="flex items-start gap-3">
-                      <ShieldCheck className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
-                      <p className="text-xs text-[#585c7d] leading-relaxed">
-                        Al enviar este formulario, usted declara ser profesional de la salud con cédula profesional vigente. Q Peptides se reserva el derecho de verificar la autenticidad de la información proporcionada.
+                      <ShieldCheck className="w-5 h-5 text-[#00BFFF] shrink-0 mt-0.5" />
+                      <p className="text-xs text-[#4A657A] leading-relaxed">
+                        Al enviar este formulario, usted declara ser profesional de la salud con cédula profesional vigente. Q-PEPTIDES se reserva el derecho de verificar la autenticidad de la información proporcionada.
                       </p>
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full gold-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all gold-shadow-deep inline-flex items-center justify-center gap-2"
+                    className="w-full brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all brand-shadow-deep inline-flex items-center justify-center gap-2"
                   >
                     Solicitar Verificación de Cuenta
                   </button>

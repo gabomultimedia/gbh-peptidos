@@ -4,38 +4,38 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Open Sans', system-ui, sans-serif;
   }
 
   body {
-    background-color: #F9FAFB;
+    background-color: #F4F9FC;
     color: #151c27;
     -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer utilities {
-  .gold-gradient-bg {
-    background: linear-gradient(135deg, #d4af37 0%, #F5E17A 100%);
+  .brand-gradient-bg {
+    background: linear-gradient(135deg, #00BFFF 0%, #7CE9FF 100%);
   }
 
-  .gold-gradient-text {
-    background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
+  .brand-gradient-text {
+    background: linear-gradient(135deg, #0096D6 0%, #00BFFF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gold-shadow {
-    box-shadow: 0 4px 20px -4px rgba(212, 175, 55, 0.08);
+  .brand-shadow {
+    box-shadow: 0 4px 20px -4px rgba(0, 51, 102, 0.08);
   }
 
-  .gold-shadow-deep {
-    box-shadow: 0 12px 40px -8px rgba(26, 31, 60, 0.04), 0 4px 20px -4px rgba(212, 175, 55, 0.08);
+  .brand-shadow-deep {
+    box-shadow: 0 12px 40px -8px rgba(0, 51, 102, 0.08), 0 4px 20px -4px rgba(0, 191, 255, 0.08);
   }
 
   .champagne-gradient {
-    background: linear-gradient(to bottom, #FFFFFF 0%, #FFFBF0 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F3F8FD 100%);
   }
 
   .container-main {

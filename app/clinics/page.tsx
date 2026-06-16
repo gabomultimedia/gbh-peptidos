@@ -12,7 +12,7 @@ const clinics = [
     featured: true,
     badge: "Clínica Destacada",
     description:
-      "Una clínica de vanguardia dedicada a la salud integral, utilizando las técnicas más innovadoras y productos certificados de Q Peptides para garantizar la seguridad y satisfacción de cada paciente.",
+      "Una clínica de vanguardia dedicada a la salud integral, utilizando las técnicas más innovadoras y productos certificados de Q-PEPTIDES para garantizar la seguridad y satisfacción de cada paciente.",
     services: [
       "Medicina estética regenerativa",
       "Programas de optimización hormonal",
@@ -91,25 +91,25 @@ export default function ClinicsPage() {
         <section className="bg-white py-24">
           <div className="container-main">
             <div className="text-center space-y-4 mb-16">
-              <span className="gold-gradient-text text-sm font-semibold uppercase tracking-widest">
+              <span className="brand-gradient-text text-sm font-semibold uppercase tracking-widest">
                 Red de Clínicas
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#1A1F3C]" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                Clínicas Certificadas Q Peptides
+              <h1 className="text-4xl md:text-5xl font-bold text-[#003366]" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Clínicas Certificadas Q-PEPTIDES
               </h1>
-              <p className="text-lg text-[#585c7d] max-w-2xl mx-auto">
-                Encuentre clínicas autorizadas donde realizar sus tratamientos con seguridad y estándares profesionales. Todos los centros certificados utilizan productos Q Peptides de grado médico.
+              <p className="text-lg text-[#4A657A] max-w-2xl mx-auto">
+                Encuentre clínicas autorizadas donde realizar sus tratamientos con seguridad y estándares profesionales. Todos los centros certificados utilizan productos Q-PEPTIDES de grado médico.
               </p>
             </div>
 
             {/* Search */}
             <div className="max-w-xl mx-auto mb-16">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#585c7d]" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#4A657A]" />
                 <input
                   type="text"
                   placeholder="Buscar clínica o especialidad..."
-                  className="w-full pl-12 pr-4 py-4 rounded-[16px] border border-[#d4af37]/30 bg-white gold-shadow text-[#1A1F3C] placeholder:text-[#585c7d]/60 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20"
+                  className="w-full pl-12 pr-4 py-4 rounded-[16px] border border-[#00BFFF]/30 bg-white brand-shadow text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
                 />
               </div>
             </div>
@@ -122,8 +122,8 @@ export default function ClinicsPage() {
                     key={i}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                       i === 0
-                        ? "gold-gradient-bg text-white"
-                        : "border border-[#d4af37]/30 text-[#1A1F3C] hover:border-[#d4af37] hover:bg-[#f9f9ff]"
+                        ? "brand-gradient-bg text-white"
+                        : "border border-[#00BFFF]/30 text-[#003366] hover:border-[#00BFFF] hover:bg-[#F3F8FD]"
                     }`}
                   >
                     {filter}
@@ -140,19 +140,19 @@ export default function ClinicsPage() {
                 .map((clinic) => (
                   <div
                     key={clinic.id}
-                    className="bg-white rounded-[24px] gold-shadow-deep border border-[#d4af37]/30 overflow-hidden"
+                    className="bg-white rounded-[24px] brand-shadow-deep border border-[#00BFFF]/30 overflow-hidden"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                       {/* Image area */}
-                      <div className="lg:col-span-1 bg-[#f9f9ff] flex items-center justify-center p-12 min-h-[300px] border-r border-[#d4af37]/10">
+                      <div className="lg:col-span-1 bg-[#F3F8FD] flex items-center justify-center p-12 min-h-[300px] border-r border-[#00BFFF]/10">
                         <div className="text-center space-y-4">
-                          <div className="w-24 h-24 rounded-full bg-[#d4af37]/10 flex items-center justify-center mx-auto">
-                            <svg width="48" height="48" fill="none" stroke="#d4af37" strokeWidth="1.5" viewBox="0 0 24 24">
+                          <div className="w-24 h-24 rounded-full bg-[#00BFFF]/10 flex items-center justify-center mx-auto">
+                            <svg width="48" height="48" fill="none" stroke="#00BFFF" strokeWidth="1.5" viewBox="0 0 24 24">
                               <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                           </div>
                           {clinic.badge && (
-                            <span className="inline-flex items-center gap-1 bg-[#d4af37] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span className="inline-flex items-center gap-1 bg-[#00BFFF] text-white text-xs font-semibold px-3 py-1 rounded-full">
                               <Star className="w-3 h-3" />
                               {clinic.badge}
                             </span>
@@ -163,32 +163,32 @@ export default function ClinicsPage() {
                       {/* Content */}
                       <div className="lg:col-span-2 p-8 space-y-6">
                         <div>
-                          <h3 className="text-2xl font-bold text-[#1A1F3C] mb-1" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                          <h3 className="text-2xl font-bold text-[#003366] mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
                             {clinic.name}
                           </h3>
-                          <p className="text-[#d4af37] font-medium">{clinic.specialty}</p>
+                          <p className="text-[#00BFFF] font-medium">{clinic.specialty}</p>
                         </div>
 
-                        <p className="text-[#585c7d] leading-relaxed">{clinic.description}</p>
+                        <p className="text-[#4A657A] leading-relaxed">{clinic.description}</p>
 
                         <div className="flex flex-wrap gap-2">
                           {clinic.tags.map((tag, i) => (
                             <span
                               key={i}
-                              className="px-3 py-1 rounded-full border border-[#585c7d]/20 text-xs text-[#585c7d] bg-[#f9f9ff]"
+                              className="px-3 py-1 rounded-full border border-[#4A657A]/20 text-xs text-[#4A657A] bg-[#F3F8FD]"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-[#d4af37]/10">
-                          <div className="flex items-center gap-2 text-sm text-[#585c7d]">
-                            <MapPin className="w-4 h-4 text-[#d4af37]" />
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-[#00BFFF]/10">
+                          <div className="flex items-center gap-2 text-sm text-[#4A657A]">
+                            <MapPin className="w-4 h-4 text-[#00BFFF]" />
                             {clinic.location}
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-[#585c7d]">
-                            <Phone className="w-4 h-4 text-[#d4af37]" />
+                          <div className="flex items-center gap-2 text-sm text-[#4A657A]">
+                            <Phone className="w-4 h-4 text-[#00BFFF]" />
                             {clinic.phone}
                           </div>
                         </div>
@@ -198,12 +198,12 @@ export default function ClinicsPage() {
                             href={clinic.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="gold-gradient-bg text-white font-semibold px-6 py-3 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
+                            className="brand-gradient-bg text-white font-semibold px-6 py-3 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
                           >
                             Visitar Sitio
                             <ExternalLink className="w-4 h-4" />
                           </a>
-                          <button className="border border-[#d4af37] text-[#1A1F3C] font-semibold px-6 py-3 rounded-[16px] hover:bg-[#f9f9ff] transition-all inline-flex items-center gap-2">
+                          <button className="border border-[#00BFFF] text-[#003366] font-semibold px-6 py-3 rounded-[16px] hover:bg-[#F3F8FD] transition-all inline-flex items-center gap-2">
                             Solicitar Cita
                           </button>
                         </div>
@@ -219,40 +219,40 @@ export default function ClinicsPage() {
                   .map((clinic) => (
                     <div
                       key={clinic.id}
-                      className="bg-white rounded-[16px] p-8 gold-shadow border border-[#d4af37]/20 hover:-translate-y-1 transition-transform duration-300"
+                      className="bg-white rounded-[16px] p-8 brand-shadow border border-[#00BFFF]/20 hover:-translate-y-1 transition-transform duration-300"
                     >
-                      <h3 className="text-lg font-bold text-[#1A1F3C] mb-1" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <h3 className="text-lg font-bold text-[#003366] mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
                         {clinic.name}
                       </h3>
-                      <p className="text-[#d4af37] text-sm font-medium mb-3">{clinic.specialty}</p>
+                      <p className="text-[#00BFFF] text-sm font-medium mb-3">{clinic.specialty}</p>
 
                       <div className="flex flex-wrap gap-1 mb-4">
                         {clinic.tags.map((tag, i) => (
                           <span
                             key={i}
-                            className="px-2 py-0.5 rounded-full border border-[#585c7d]/20 text-xs text-[#585c7d] bg-[#f9f9ff]"
+                            className="px-2 py-0.5 rounded-full border border-[#4A657A]/20 text-xs text-[#4A657A] bg-[#F3F8FD]"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
 
-                      <div className="space-y-2 mb-6 text-sm text-[#585c7d]">
+                      <div className="space-y-2 mb-6 text-sm text-[#4A657A]">
                         <div className="flex items-center gap-2">
-                          <MapPin className="w-3 h-3 text-[#d4af37]" />
+                          <MapPin className="w-3 h-3 text-[#00BFFF]" />
                           {clinic.location}
                         </div>
                         <div className="flex items-center gap-2">
-                          <Phone className="w-3 h-3 text-[#d4af37]" />
+                          <Phone className="w-3 h-3 text-[#00BFFF]" />
                           {clinic.phone}
                         </div>
                       </div>
 
                       <div className="flex gap-2">
-                        <button className="flex-1 gold-gradient-bg text-white text-sm font-medium py-2 rounded-[12px] hover:opacity-90 transition-all">
+                        <button className="flex-1 brand-gradient-bg text-white text-sm font-medium py-2 rounded-[12px] hover:opacity-90 transition-all">
                           Visitar
                         </button>
-                        <button className="flex-1 border border-[#d4af37]/30 text-[#1A1F3C] text-sm font-medium py-2 rounded-[12px] hover:bg-[#f9f9ff] transition-all">
+                        <button className="flex-1 border border-[#00BFFF]/30 text-[#003366] text-sm font-medium py-2 rounded-[12px] hover:bg-[#F3F8FD] transition-all">
                           Contactar
                         </button>
                       </div>
@@ -265,17 +265,17 @@ export default function ClinicsPage() {
 
         {/* Gold Banner */}
         <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 gold-gradient-bg opacity-10" />
+          <div className="absolute inset-0 brand-gradient-bg opacity-10" />
           <div className="container-main relative z-10 text-center">
-            <h2 className="text-2xl font-bold text-[#1A1F3C] mb-4" style={{ fontFamily: "DM Sans, sans-serif" }}>
-              Estándar Oro Q Peptides
+            <h2 className="text-2xl font-bold text-[#003366] mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Estándar Oro Q-PEPTIDES
             </h2>
-            <p className="text-[#585c7d] max-w-xl mx-auto mb-6">
+            <p className="text-[#4A657A] max-w-xl mx-auto mb-6">
               Todas las clínicas certificadas cumplen con nuestros estándares de calidad, seguridad y protocolos de aplicación. Encuentre el centro más cercano a usted.
             </p>
             <Link
               href="/contact"
-              className="gold-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
+              className="brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all inline-flex items-center gap-2"
             >
               Registrar su Clínica
               <ChevronRight className="w-4 h-4" />

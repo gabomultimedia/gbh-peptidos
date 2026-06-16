@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Shield, FileCheck, Award, FlaskConical, Microscope, Droplets, Atom, CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Certificaciones | Q Peptides",
-  description: "Certificaciones y estándares de calidad Q Peptides — COA, HPLC, LC-MS, cGMP, ISO 17025. Laboratorio con sede en Singapur.",
+  title: "Certificaciones | Q-PEPTIDES",
+  description: "Certificaciones y estándares de calidad Q-PEPTIDES — COA, HPLC, LC-MS, cGMP, ISO 17025. Laboratorio con sede en Singapur.",
 };
 
 const certifications = [
@@ -42,7 +42,7 @@ const certifications = [
   {
     icon: Shield,
     title: "Heavy Metals Testing (ICP-MS)",
-    desc: "Detecta trazas de metales pesados (Pb, As, Hg, Cd) mediante ICP-MS.透 Or testing.",
+    desc: "Detecta trazas de metales pesados (Pb, As, Hg, Cd) mediante ICP-MS y pruebas complementarias.",
   },
   {
     icon: Award,
@@ -69,14 +69,14 @@ export default function CertificationsPage() {
         <section className="bg-white py-24">
           <div className="container-main">
             <div className="text-center mb-16 space-y-4">
-              <span className="gold-gradient-text text-sm font-semibold uppercase tracking-widest animate-fade-in">
+              <span className="brand-gradient-text text-sm font-semibold uppercase tracking-widest animate-fade-in">
                 🇸🇬 Singapur · Third-party tested · COA verificado
               </span>
-              <h1 className="text-4xl font-bold text-[#1A1F3C] animate-fade-in-up" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                Certificaciones Q Peptides
+              <h1 className="text-4xl font-bold text-[#003366] animate-fade-in-up" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Certificaciones Q-PEPTIDES
               </h1>
-              <p className="text-lg text-[#585c7d] max-w-2xl mx-auto animate-fade-in-up">
-                Todos nuestros compuestos undergo thorough third-party testing. Cada lote incluye COA completo con resultados de HPLC y Mass Spec.
+              <p className="text-lg text-[#4A657A] max-w-2xl mx-auto animate-fade-in-up">
+                Todos nuestros compuestos pasan por verificación de terceros. Cada lote incluye COA completo con resultados de HPLC y Mass Spec.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -85,43 +85,43 @@ export default function CertificationsPage() {
                 return (
                   <div
                     key={i}
-                    className="bg-white rounded-[20px] p-8 gold-shadow-deep border border-[#d4af37]/20 text-center animate-fade-in-up"
+                    className="bg-white rounded-[20px] p-8 brand-shadow-deep border border-[#00BFFF]/20 text-center animate-fade-in-up"
                     style={{ animationDelay: `${i * 100}ms` }}
                   >
-                    <div className="w-16 h-16 rounded-full bg-[#f9f9ff] flex items-center justify-center mx-auto mb-6">
-                      <Icon className="w-8 h-8 text-[#d4af37]" />
+                    <div className="w-16 h-16 rounded-full bg-[#F3F8FD] flex items-center justify-center mx-auto mb-6">
+                      <Icon className="w-8 h-8 text-[#00BFFF]" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1A1F3C] mb-3" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                    <h3 className="text-xl font-bold text-[#003366] mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       {cert.title}
                     </h3>
-                    <p className="text-[#585c7d]">{cert.desc}</p>
+                    <p className="text-[#4A657A]">{cert.desc}</p>
                   </div>
                 );
               })}
             </div>
-            <div className="mt-12 bg-[#f9f9ff] rounded-[20px] p-8 gold-shadow border border-[#d4af37]/20 animate-fade-in-up" style={{ animationDelay: "600ms" }}>
-              <h3 className="text-xl font-bold text-[#1A1F3C] mb-4 text-center" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                Transparendcia de Lote
+            <div className="mt-12 bg-[#F3F8FD] rounded-[20px] p-8 brand-shadow border border-[#00BFFF]/20 animate-fade-in-up" style={{ animationDelay: "600ms" }}>
+              <h3 className="text-xl font-bold text-[#003366] mb-4 text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Transparencia de Lote
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-[#d4af37] mb-1">🇸🇬</div>
-                  <p className="text-sm text-[#585c7d]">Laboratorio certificado en Singapur</p>
+                  <div className="text-2xl font-bold text-[#00BFFF] mb-1">🇸🇬</div>
+                  <p className="text-sm text-[#4A657A]">Laboratorio certificado en Singapur</p>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#d4af37] mb-1">📋</div>
-                  <p className="text-sm text-[#585c7d]">COA + HPLC + Mass Spec por lote</p>
+                  <div className="text-2xl font-bold text-[#00BFFF] mb-1">📋</div>
+                  <p className="text-sm text-[#4A657A]">COA + HPLC + Mass Spec por lote</p>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#d4af37] mb-1">🔬</div>
-                  <p className="text-sm text-[#585c7d]">Third-party verified</p>
+                  <div className="text-2xl font-bold text-[#00BFFF] mb-1">🔬</div>
+                  <p className="text-sm text-[#4A657A]">Third-party verified</p>
                 </div>
               </div>
             </div>
             <div className="mt-16 text-center animate-fade-in-up" style={{ animationDelay: "700ms" }}>
               <Link
                 href="/contact"
-                className="gold-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all gold-shadow-deep inline-flex items-center gap-2 hover:scale-105 transition-transform"
+                className="brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all brand-shadow-deep inline-flex items-center gap-2 hover:scale-105 transition-transform"
               >
                 Solicitar Información de Certificaciones
               </Link>

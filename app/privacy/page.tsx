@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Aviso de Privacidad | Q Peptides",
-  description: "Aviso de privacidad de Q Peptides — laboratorio con sede en Singapur.",
+  title: "Aviso de Privacidad | Q-PEPTIDES",
+  description: "Aviso de privacidad de Q-PEPTIDES — laboratorio con sede en Singapur.",
 };
 
 export default function PrivacyPage() {
@@ -13,19 +13,19 @@ export default function PrivacyPage() {
       <main className="pt-20">
         <section className="bg-white py-24">
           <div className="container-main max-w-3xl">
-            <h1 className="text-3xl font-bold text-[#1A1F3C] mb-8" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <h1 className="text-3xl font-bold text-[#003366] mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Aviso de Privacidad
             </h1>
-            <div className="prose prose-lg text-[#585c7d] space-y-6">
-              <p className="text-sm text-[#d4af37]">Última actualización: Mayo 2026</p>
+            <div className="prose prose-lg text-[#4A657A] space-y-6">
+              <p className="text-sm text-[#00BFFF]">Última actualización: Mayo 2026</p>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Responsable del Tratamiento de Datos</h2>
-              <p>Q Peptides, con sede en Singapur (2 International Business Park Road Strategy #01-04), es responsable del tratamiento de sus datos personales.</p>
+              <h2 className="text-xl font-semibold text-[#003366]">Responsable del Tratamiento de Datos</h2>
+              <p>Q-PEPTIDES, con sede en Singapur (2 International Business Park Road Strategy #01-04), es responsable del tratamiento de sus datos personales.</p>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Datos Personales Recopilados</h2>
+              <h2 className="text-xl font-semibold text-[#003366]">Datos Personales Recopilados</h2>
               <p>Podemos recopilar: nombre, correo electrónico, número de teléfono, cédula profesional, especialidad médica e información de contacto de su institución.</p>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Finalidad del Tratamiento</h2>
+              <h2 className="text-xl font-semibold text-[#003366]">Finalidad del Tratamiento</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Registro y verificación de profesionales de la salud</li>
                 <li>Comunicación sobre productos y servicios</li>
@@ -33,14 +33,14 @@ export default function PrivacyPage() {
                 <li>Cumplimiento de obligaciones legales</li>
               </ul>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Protección de Datos</h2>
+              <h2 className="text-xl font-semibold text-[#003366]">Protección de Datos</h2>
               <p>Implementamos medidas de seguridad técnicas y administrativas para proteger sus datos contra acceso no autorizado, pérdida o alteración.</p>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Derechos ARCO</h2>
+              <h2 className="text-xl font-semibold text-[#003366]">Derechos ARCO</h2>
               <p>Usted tiene derecho a: Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, contacte a privacy@q-peptides.com.</p>
 
-              <h2 className="text-xl font-semibold text-[#1A1F3C]">Contacto</h2>
-              <p>Para consultas sobre este aviso de privacidad: <span className="text-[#d4af37]">privacy@q-peptides.com</span></p>
+              <h2 className="text-xl font-semibold text-[#003366]">Contacto</h2>
+              <p>Para consultas sobre este aviso de privacidad: <span className="text-[#00BFFF]">privacy@q-peptides.com</span></p>
             </div>
           </div>
         </section>

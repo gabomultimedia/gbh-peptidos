@@ -4,8 +4,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://q-peptides.com"),
   title: {
-    default: "Q Peptides — Péptidos de Grado Médico",
-    template: "%s | Q Peptides",
+    default: "Q-PEPTIDES — Biotecnología de Alta Pureza",
+    template: "%s | Q-PEPTIDES",
   },
   description:
     "Laboratorio con sede en Singapur. Innovación en medicina estética regenerativa y optimización metabólica. Biotecnología de alta pureza certificada — third-party tested con COA verificado.",
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
     "péptidos para adelgazar",
     "grado médico",
     "medicina regenerativa",
-    "Q Peptides",
+    "Q-PEPTIDES",
     "q-peptides.com",
     "peptides Singapore",
   ],
-  authors: [{ name: "Q Peptides" }],
-  creator: "Q Peptides",
-  publisher: "Q Peptides",
+  authors: [{ name: "Q-PEPTIDES" }],
+  creator: "Q-PEPTIDES",
+  publisher: "Q-PEPTIDES",
   openGraph: {
     type: "website",
     locale: "es_MX",
     url: "https://q-peptides.com",
-    siteName: "Q Peptides",
-    title: "Q Peptides — Péptidos de Grado Médico de Alta Pureza",
+    siteName: "Q-PEPTIDES",
+    title: "Q-PEPTIDES — Biotecnología de Alta Pureza",
     description:
       "Laboratorio con sede en Singapur. Biotecnología de alta pureza certificada para expertos en salud y bienestar en México.",
     images: [
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Q Peptides — Péptidos de Grado Médico de Alta Pureza 🇸🇬",
+        alt: "Q-PEPTIDES — Biotecnología de Alta Pureza 🇸🇬",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Q Peptides — Péptidos de Grado Médico de Alta Pureza 🇸🇬",
+    title: "Q-PEPTIDES — Biotecnología de Alta Pureza 🇸🇬",
     description:
       "Laboratorio con sede en Singapur. Third-party tested con COA verificado.",
     images: ["/images/og-image.svg"],
@@ -79,7 +79,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>

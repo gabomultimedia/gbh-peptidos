@@ -32,18 +32,18 @@ export default function Footer() {
         </svg>
       </a>
 
-      <footer className="bg-[#1A1F3C] w-full py-12">
+      <footer className="bg-[#003366] w-full py-12">
         <div className="container-main">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-[#ffffff]">
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/images/logo.png"
-                  alt="Q Peptides"
-                  width={160}
-                  height={54}
-                  className="h-14 w-auto brightness-0 invert"
+                  src="/logo-peptidos-cropped.png"
+                  alt="Q-PEPTIDES"
+                  width={200}
+                  height={68}
+                  className="h-14 w-auto object-contain brightness-0 invert"
                 />
               </div>
               <p className="text-sm opacity-80 max-w-xs">
@@ -53,12 +53,12 @@ export default function Footer() {
 
             {/* Productos */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[#F5E17A] font-bold text-sm mb-2">Productos</h4>
+              <h4 className="text-[#7CE9FF] font-bold text-sm mb-2">Productos</h4>
               {footerLinks.productos.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm opacity-80 hover:opacity-100 hover:text-[#F5E17A] transition-colors"
+                  className="text-sm opacity-80 hover:opacity-100 hover:text-[#7CE9FF] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -67,12 +67,12 @@ export default function Footer() {
 
             {/* Links */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[#F5E17A] font-bold text-sm mb-2">Enlaces</h4>
+              <h4 className="text-[#7CE9FF] font-bold text-sm mb-2">Enlaces</h4>
               {footerLinks.enlaces.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm opacity-80 hover:opacity-100 hover:text-[#F5E17A] transition-colors"
+                  className="text-sm opacity-80 hover:opacity-100 hover:text-[#7CE9FF] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
 
             {/* Contacto */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[#F5E17A] font-bold text-sm mb-2">Contacto</h4>
+              <h4 className="text-[#7CE9FF] font-bold text-sm mb-2">Contacto</h4>
               <p className="text-sm opacity-80 flex items-center gap-2">
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -129,7 +129,7 @@ export default function Footer() {
                 href="https://abundiss.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#d4af37] hover:text-[#F5E17A] transition-colors"
+                className="text-[#00BFFF] hover:text-[#7CE9FF] transition-colors"
               >
                 Abundiss Services
               </a>
@@ -138,7 +138,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="border-t border-white/10 mt-4 pt-4 text-center text-xs opacity-60">
-            © 2026 Q Peptides. Todos los derechos reservados.
+            © 2026 Q-PEPTIDES. Todos los derechos reservados.
           </div>
         </div>
       </footer>
