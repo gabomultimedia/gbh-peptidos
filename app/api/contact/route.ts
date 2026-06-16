@@ -3,7 +3,7 @@ import { Resend } from "resend";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
-const fromEmail = process.env.RESEND_FROM_EMAIL || "Q-PEPTIDES <onboarding@resend.dev>";
+const fromEmail = process.env.RESEND_FROM_EMAIL || "Q-PEPTIDES <no-reply@q-peptides.com>";
 
 const recipients = ["info@q-peptides.com", "33552827.146274@parser.kommo.com"];
 
