@@ -32,10 +32,44 @@ export default function ContactClient() {
     comments: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSending(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await response.json().catch(() => null)) as { error?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(data?.error || "No se pudo enviar el formulario.");
+      }
+
+      setSubmitted(true);
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        license: "",
+        specialty: "",
+        institution: "",
+        comments: "",
+      });
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Ocurrió un error inesperado.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -103,12 +137,19 @@ export default function ContactClient() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="bg-white rounded-[24px] brand-shadow-deep border border-[#00BFFF]/20 p-8 space-y-6">
+                  {errorMessage ? (
+                    <div className="rounded-[16px] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      {errorMessage}
+                    </div>
+                  ) : null}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-full-name" className="block text-sm font-semibold text-[#003366] mb-2">
                         Nombre Completo <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
+                        id="contact-full-name"
                         type="text"
                         required
                         value={formData.fullName}
@@ -119,10 +160,11 @@ export default function ContactClient() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-email" className="block text-sm font-semibold text-[#003366] mb-2">
                         Correo Electrónico Profesional <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={formData.email}
@@ -133,10 +175,11 @@ export default function ContactClient() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-phone" className="block text-sm font-semibold text-[#003366] mb-2">
                         Teléfono de Contacto <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         required
                         value={formData.phone}
@@ -147,10 +190,11 @@ export default function ContactClient() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-license" className="block text-sm font-semibold text-[#003366] mb-2">
                         Cédula Profesional <span className="text-[#00BFFF]">*</span>
                       </label>
                       <input
+                        id="contact-license"
                         type="text"
                         required
                         value={formData.license}
@@ -161,10 +205,11 @@ export default function ContactClient() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-specialty" className="block text-sm font-semibold text-[#003366] mb-2">
                         Especialidad Médica <span className="text-[#00BFFF]">*</span>
                       </label>
                       <select
+                        id="contact-specialty"
                         required
                         value={formData.specialty}
                         onChange={(e) => setFormData({ ...formData, specialty: e.target.value })}
@@ -180,10 +225,11 @@ export default function ContactClient() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#003366] mb-2">
+                      <label htmlFor="contact-institution" className="block text-sm font-semibold text-[#003366] mb-2">
                         Nombre de Clínica o Institución
                       </label>
                       <input
+                        id="contact-institution"
                         type="text"
                         value={formData.institution}
                         onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
@@ -194,10 +240,11 @@ export default function ContactClient() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-[#003366] mb-2">
+                    <label htmlFor="contact-comments" className="block text-sm font-semibold text-[#003366] mb-2">
                       Comentarios o Consultas
                     </label>
                     <textarea
+                      id="contact-comments"
                       rows={4}
                       value={formData.comments}
                       onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
@@ -217,9 +264,10 @@ export default function ContactClient() {
 
                   <button
                     type="submit"
-                    className="w-full brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all brand-shadow-deep inline-flex items-center justify-center gap-2"
+                    disabled={isSending}
+                    className="w-full brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all brand-shadow-deep inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Solicitar Verificación de Cuenta
+                    {isSending ? "Enviando..." : "Solicitar Verificación de Cuenta"}
                   </button>
                 </form>
               </div>
