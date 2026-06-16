@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Search, MapPin, Star, Phone, ExternalLink, ChevronRight } from "lucide-react";
+import { CONTACT_PHONE_DISPLAY } from "@/lib/site-contact";
 
 const clinics = [
   {
@@ -20,7 +22,7 @@ const clinics = [
       "Wellness integral",
     ],
     tags: ["Optimización Metabólica", "Terapia Peptídica IV", "Skin Health"],
-    phone: "+52 (664) 123 4567",
+    phone: CONTACT_PHONE_DISPLAY,
     website: "https://vivemedicalspa.com",
   },
   {
@@ -39,7 +41,7 @@ const clinics = [
       "Nutrición clínica",
     ],
     tags: ["Antiaging", "Longevidad", "Medicina Funcional"],
-    phone: "+52 (55) 4567 8901",
+    phone: CONTACT_PHONE_DISPLAY,
     website: "#",
   },
   {
@@ -58,7 +60,7 @@ const clinics = [
       "Terapias IV",
     ],
     tags: ["Regeneración", "Deportología", "IV Therapy"],
-    phone: "+52 (81) 7890 1234",
+    phone: CONTACT_PHONE_DISPLAY,
     website: "#",
   },
   {
@@ -77,7 +79,7 @@ const clinics = [
       "Medicina estética avanzada",
     ],
     tags: ["Biotecnología", "Genética", "Wellness"],
-    phone: "+52 (33) 3456 7890",
+    phone: CONTACT_PHONE_DISPLAY,
     website: "#",
   },
 ];
@@ -144,19 +146,27 @@ export default function ClinicsPage() {
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                       {/* Image area */}
-                      <div className="lg:col-span-1 bg-[#F3F8FD] flex items-center justify-center p-12 min-h-[300px] border-r border-[#00BFFF]/10">
-                        <div className="text-center space-y-4">
-                          <div className="w-24 h-24 rounded-full bg-[#00BFFF]/10 flex items-center justify-center mx-auto">
-                            <svg width="48" height="48" fill="none" stroke="#00BFFF" strokeWidth="1.5" viewBox="0 0 24 24">
-                              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                          </div>
+                      <div className="lg:col-span-1 relative min-h-[320px] border-r border-[#00BFFF]/10 bg-[#F3F8FD]">
+                        <Image
+                          src="/optimized/contacto_imagen_sucursal.webp"
+                          alt="Sucursal VIVE MED SPA"
+                          fill
+                          priority
+                          sizes="(min-width: 1024px) 33vw, 100vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/55 via-transparent to-transparent" />
+                        <div className="absolute left-6 right-6 bottom-6 space-y-3">
                           {clinic.badge && (
                             <span className="inline-flex items-center gap-1 bg-[#00BFFF] text-white text-xs font-semibold px-3 py-1 rounded-full">
                               <Star className="w-3 h-3" />
                               {clinic.badge}
                             </span>
                           )}
+                          <div className="rounded-[16px] bg-white/90 backdrop-blur px-4 py-3">
+                            <p className="text-sm font-semibold text-[#003366]">{clinic.name}</p>
+                            <p className="text-xs text-[#4A657A]">{clinic.location}</p>
+                          </div>
                         </div>
                       </div>
 

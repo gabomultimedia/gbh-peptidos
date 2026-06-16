@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, User, FileText, Heart } from "lucide-react";
+import { CONTACT_PHONE_PLACEHOLDER } from "@/lib/site-contact";
 
 const steps = [
   { id: 1, icon: User, label: "Datos Personales" },
@@ -151,7 +152,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-[16px] border border-[#00BFFF]/30 bg-white text-[#003366] placeholder:text-[#4A657A]/60 focus:outline-none focus:border-[#00BFFF] focus:ring-2 focus:ring-[#00BFFF]/20"
-                        placeholder="+52 (55) 1234 5678"
+                        placeholder={CONTACT_PHONE_PLACEHOLDER}
                       />
                     </div>
 

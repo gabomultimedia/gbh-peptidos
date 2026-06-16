@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CONTACT_PHONE_DISPLAY, CONTACT_WHATSAPP_URL } from "@/lib/site-contact";
 
 const footerLinks = {
   enlaces: [
@@ -21,7 +22,7 @@ export default function Footer() {
     <>
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/65269542519?text=Hola%2C%20me%20interesa%20obtener%20información%20sobre%20los%20péptidos%20de%20Q%20Peptides%20desde%20Singapur"
+        href={CONTACT_WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
@@ -92,13 +93,13 @@ export default function Footer() {
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +65 6954 2519
+                {CONTACT_PHONE_DISPLAY}
               </p>
               <p className="text-sm opacity-80 flex items-center gap-2">
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Fax: +65 6491 5938
+                Fax: +52 664 477 1123
               </p>
               <p className="text-sm opacity-80 flex items-center gap-2">
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -108,7 +109,7 @@ export default function Footer() {
                 2 International Business Park Road Strategy #01-04, Singapore 609930
               </p>
               <a
-                href="https://wa.me/65269542519"
+                href={CONTACT_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-[#25D366] hover:text-[#128C7E] transition-colors mt-2"
