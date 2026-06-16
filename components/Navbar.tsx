@@ -60,15 +60,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white border-b border-[#00BFFF] shadow-[0_4px_20px_-4px_rgba(0,51,102,0.08)]">
-      <div className="container-main flex justify-between items-center h-16">
+      <div className="container-main flex justify-between items-center h-24">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo-peptidos.png"
             alt="Q-PEPTIDES"
-            width={260}
-            height={146}
-            className="h-12 w-auto object-contain"
+            width={520}
+            height={292}
+            className="h-24 w-auto object-contain"
             priority
           />
         </Link>
