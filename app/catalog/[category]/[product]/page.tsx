@@ -43,6 +43,29 @@ export async function generateMetadata({
   return {
     title: product.metaTitle,
     description: product.metaDescription,
+    alternates: {
+      canonical: `/catalog/${product.categorySlug}/${product.slug}`,
+    },
+    openGraph: {
+      title: product.metaTitle,
+      description: product.metaDescription,
+      url: `https://q-peptides.com/catalog/${product.categorySlug}/${product.slug}`,
+      siteName: "Q-PEPTIDES",
+      images: [
+        {
+          url: getProductImagePath(product.id),
+          width: 1100,
+          height: 1375,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.metaTitle,
+      description: product.metaDescription,
+      images: [getProductImagePath(product.id)],
+    },
   };
 }
 

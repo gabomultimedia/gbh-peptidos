@@ -49,6 +49,29 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${meta.title} | Q-PEPTIDES`,
     description: meta.description,
+    alternates: {
+      canonical: `/catalog/${params.category}`,
+    },
+    openGraph: {
+      title: `${meta.title} | Q-PEPTIDES`,
+      description: meta.description,
+      url: `https://q-peptides.com/catalog/${params.category}`,
+      siteName: "Q-PEPTIDES",
+      images: [
+        {
+          url: "/images/og-image.svg",
+          width: 1200,
+          height: 630,
+          alt: meta.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${meta.title} | Q-PEPTIDES`,
+      description: meta.description,
+      images: ["/images/og-image.svg"],
+    },
   };
 }
 

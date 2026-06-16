@@ -2,10 +2,34 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Shield, FileCheck, Award, FlaskConical, Microscope, Droplets, Atom, CheckCircle } from "lucide-react";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Certificaciones | Q-PEPTIDES",
   description: "Certificaciones y estándares de calidad Q-PEPTIDES — COA, HPLC, LC-MS, cGMP, ISO 17025. Laboratorio con sede en Singapur.",
+  alternates: {
+    canonical: "/certifications",
+  },
+  openGraph: {
+    title: "Certificaciones | Q-PEPTIDES",
+    description: "Certificaciones y estándares de calidad Q-PEPTIDES — COA, HPLC, LC-MS, cGMP, ISO 17025.",
+    url: "https://q-peptides.com/certifications",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Certificaciones Q-PEPTIDES",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Certificaciones | Q-PEPTIDES",
+    description: "Certificaciones y estándares de calidad Q-PEPTIDES — COA, HPLC, LC-MS, cGMP, ISO 17025.",
+    images: ["/images/og-image.svg"],
+  },
 };
 
 const certifications = [

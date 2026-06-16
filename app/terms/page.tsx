@@ -1,9 +1,33 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Términos y Condiciones | Q-PEPTIDES",
   description: "Términos y condiciones de Q Pepings — laboratorio con sede en Singapur.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Términos y Condiciones | Q-PEPTIDES",
+    description: "Términos y condiciones de Q-PEPTIDES — laboratorio con sede en Singapur.",
+    url: "https://q-peptides.com/terms",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Términos y Condiciones Q-PEPTIDES",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Términos y Condiciones | Q-PEPTIDES",
+    description: "Términos y condiciones de Q-PEPTIDES — laboratorio con sede en Singapur.",
+    images: ["/images/og-image.svg"],
+  },
 };
 
 export default function TermsPage() {

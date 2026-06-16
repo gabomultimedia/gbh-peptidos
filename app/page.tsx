@@ -4,6 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, Scale, Zap, Sparkles, Heart } from "lucide-react";
 import { getProductImagePath } from "@/lib/product-images";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Q-PEPTIDES — Biotecnología de Alta Pureza",
+  description:
+    "Laboratorio con sede en Singapur. Innovación en medicina estética regenerativa y optimización metabólica. Biotecnología de alta pureza certificada.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Q-PEPTIDES — Biotecnología de Alta Pureza",
+    description:
+      "Laboratorio con sede en Singapur. Innovación en medicina estética regenerativa y optimización metabólica.",
+    url: "https://q-peptides.com",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Q-PEPTIDES — Biotecnología de Alta Pureza",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Q-PEPTIDES — Biotecnología de Alta Pureza",
+    description:
+      "Laboratorio con sede en Singapur. Innovación en medicina estética regenerativa y optimización metabólica.",
+    images: ["/images/og-image.svg"],
+  },
+};
 
 const stats = [
   { value: "99%+", label: "Pureza Certificada" },

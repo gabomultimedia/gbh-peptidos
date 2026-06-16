@@ -4,6 +4,38 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Search, MapPin, Star, Phone, ExternalLink, ChevronRight } from "lucide-react";
 import { CONTACT_PHONE_DISPLAY } from "@/lib/site-contact";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Clínicas Certificadas Q-PEPTIDES",
+  description:
+    "Red de clínicas certificadas para tratamientos con productos Q-PEPTIDES de grado médico.",
+  alternates: {
+    canonical: "/clinics",
+  },
+  openGraph: {
+    title: "Clínicas Certificadas Q-PEPTIDES",
+    description:
+      "Red de clínicas certificadas para tratamientos con productos Q-PEPTIDES de grado médico.",
+    url: "https://q-peptides.com/clinics",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/optimized/contacto_imagen_sucursal.webp",
+        width: 1206,
+        height: 1076,
+        alt: "Vive Medical Spa Tijuana",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clínicas Certificadas Q-PEPTIDES",
+    description:
+      "Red de clínicas certificadas para tratamientos con productos Q-PEPTIDES de grado médico.",
+    images: ["/optimized/contacto_imagen_sucursal.webp"],
+  },
+};
 
 const clinics = [
   {

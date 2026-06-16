@@ -5,6 +5,38 @@ import Footer from "@/components/Footer";
 import { products } from "@/lib/products";
 import { getProductImagePath } from "@/lib/product-images";
 import { FlaskConical, Zap, ShieldCheck, TrendingDown, Star } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Catálogo de Péptidos de Grado Médico",
+  description:
+    "Catálogo de péptidos de grado médico con venta exclusiva a profesionales de la salud y cédula vigente.",
+  alternates: {
+    canonical: "/catalog",
+  },
+  openGraph: {
+    title: "Catálogo de Péptidos de Grado Médico | Q-PEPTIDES",
+    description:
+      "Catálogo de péptidos de grado médico con venta exclusiva a profesionales de la salud y cédula vigente.",
+    url: "https://q-peptides.com/catalog",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Catálogo Q-PEPTIDES",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Catálogo de Péptidos de Grado Médico | Q-PEPTIDES",
+    description:
+      "Catálogo de péptidos de grado médico con venta exclusiva a profesionales de la salud y cédula vigente.",
+    images: ["/images/og-image.svg"],
+  },
+};
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   FlaskConical,

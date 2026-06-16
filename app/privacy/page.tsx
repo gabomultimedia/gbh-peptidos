@@ -1,9 +1,33 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Aviso de Privacidad | Q-PEPTIDES",
   description: "Aviso de privacidad de Q-PEPTIDES — laboratorio con sede en Singapur.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Aviso de Privacidad | Q-PEPTIDES",
+    description: "Aviso de privacidad de Q-PEPTIDES — laboratorio con sede en Singapur.",
+    url: "https://q-peptides.com/privacy",
+    siteName: "Q-PEPTIDES",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Aviso de Privacidad Q-PEPTIDES",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aviso de Privacidad | Q-PEPTIDES",
+    description: "Aviso de privacidad de Q-PEPTIDES — laboratorio con sede en Singapur.",
+    images: ["/images/og-image.svg"],
+  },
 };
 
 export default function PrivacyPage() {
