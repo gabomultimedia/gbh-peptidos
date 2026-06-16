@@ -28,3 +28,4 @@ yarn-error.log*
 *.ico
 *.png
 !public/images/logo.png
+!public/logo-peptidos.png

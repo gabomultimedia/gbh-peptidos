@@ -64,10 +64,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo-peptidos-cropped.png"
+            src="/logo-peptidos.png"
             alt="Q-PEPTIDES"
-            width={190}
-            height={64}
+            width={260}
+            height={146}
             className="h-12 w-auto object-contain"
             priority
           />

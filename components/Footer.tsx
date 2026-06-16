@@ -39,10 +39,10 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/logo-peptidos-cropped.png"
+                  src="/logo-peptidos.png"
                   alt="Q-PEPTIDES"
-                  width={200}
-                  height={68}
+                  width={260}
+                  height={146}
                   className="h-14 w-auto object-contain brightness-0 invert"
                 />
               </div>
