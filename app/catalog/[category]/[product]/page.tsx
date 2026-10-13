@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { products, getProductBySlug } from "@/lib/products";
-import { getProductImagePath } from "@/lib/product-images";
+import { getProductImagePath, getProductImageDimensions } from "@/lib/product-images";
 import {
   FlaskConical,
   Zap,
@@ -54,9 +54,8 @@ export async function generateMetadata({
       images: [
         {
           url: getProductImagePath(product.id),
-          width: 1100,
-          height: 1375,
-          alt: product.name,
+          ...getProductImageDimensions(product.id),
+          alt: `Ilustración de ${product.name} Q-PEPTIDES`,
         },
       ],
     },
@@ -80,6 +79,29 @@ export default async function ProductPage({
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Product",
+            "@id": `https://q-peptides.com/catalog/${product.categorySlug}/${product.slug}#product`,
+            name: product.name,
+            description: product.metaDescription,
+            image: `https://q-peptides.com${getProductImagePath(product.id)}`,
+            url: `https://q-peptides.com/catalog/${product.categorySlug}/${product.slug}`,
+            brand: { "@type": "Brand", name: "Q-PEPTIDES" },
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://q-peptides.com" },
+              { "@type": "ListItem", position: 2, name: "Catálogo", item: "https://q-peptides.com/catalog" },
+              { "@type": "ListItem", position: 3, name: product.category, item: `https://q-peptides.com/catalog/${product.categorySlug}` },
+              { "@type": "ListItem", position: 4, name: product.name, item: `https://q-peptides.com/catalog/${product.categorySlug}/${product.slug}` },
+            ],
+          },
+        ],
+      }).replace(/</g, "\\u003c") }} />
       <Navbar />
       <main className="pt-20">
         {/* Breadcrumb */}
@@ -140,10 +162,10 @@ export default async function ProductPage({
               {/* Right: Product Image */}
               <div className="relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0iI0Q0QUYzNyIgZmlsbC1vcGFjaXR5PSIwLjIiLz48L3N2Zz4=')] opacity-50 rounded-[32px]" />
-                <div className="relative w-[400px] h-[400px] bg-white rounded-[24px] brand-shadow-deep flex items-center justify-center border border-[#00BFFF]/20 p-8">
+                <div className="relative w-full max-w-[400px] aspect-square bg-white rounded-[24px] brand-shadow-deep flex items-center justify-center border border-[#00BFFF]/20 overflow-hidden">
                   <Image
                     src={getProductImagePath(product.id)}
-                    alt={product.name}
+                    alt={`Ilustración de ${product.name} Q-PEPTIDES`}
                     width={320}
                     height={320}
                     className="w-full h-full object-contain"

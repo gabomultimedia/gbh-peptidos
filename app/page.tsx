@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import HeroSlider from "@/components/HeroSlider";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
@@ -107,33 +108,19 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
-        {/* Hero with background image */}
-        <section className="relative py-32">
-          <Image
-            src="/images/hero-bg.webp"
-            alt="Q-PEPTIDES — Biotecnología de Alta Pureza 🇸🇬"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover"
-            sizes="100vw"
-            quality={60}
-          />
-          <div className="absolute inset-0 bg-white/70" />
-          <div className="relative container-main">
-            <div className="max-w-3xl">
+        <HeroSlider>
               <div className="inline-flex items-center rounded-full border border-[#00BFFF]/30 bg-white/80 backdrop-blur-sm px-4 py-1.5 brand-shadow mb-6 animate-fade-in">
                 <span className="brand-gradient-text text-xs font-semibold uppercase tracking-wider">
                   Q-PEPTIDES · Laboratorio con sede en Singapur 🇸🇬
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-[#003366] leading-tight mb-6 animate-fade-in-up" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              <h1 className="text-4xl xl:text-5xl font-bold text-[#003366] leading-tight mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Q-PEPTIDES — Biotecnología de Alta Pureza
               </h1>
-              <p className="text-xl text-[#4A657A] mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+              <p className="text-lg text-[#4A657A] mb-8 max-w-2xl">
                 Innovación en medicina estética regenerativa y optimización metabólica. Compuestos científicos de la más alta pureza certificados para la práctica médica profesional.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
                 <Link
                   href="/contact"
                   className="brand-gradient-bg text-white font-semibold px-8 py-4 rounded-[16px] hover:opacity-90 transition-all brand-shadow-deep inline-flex items-center justify-center gap-2"
@@ -148,9 +135,7 @@ export default function HomePage() {
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
+        </HeroSlider>
 
         {/* Stats */}
         <section className="bg-[#003366] py-16">
